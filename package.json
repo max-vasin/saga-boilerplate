@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "dependencies": {
+    "date-and-time": "^0.6.3",
+    "jest": "^23.6.0",
+    "lodash": "^4.17.11",
+    "nanoid": "^2.0.1",
+    "timespan": "^2.3.0"
+  }
+}
