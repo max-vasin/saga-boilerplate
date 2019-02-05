@@ -23,9 +23,14 @@ module.exports = {
           }
 
         case 'busy':
-          if (gameId !== assignedGameId)
-            return new Error('player is busy')
-          break
+          if (gameId !== assignedGameId) {
+            return {
+              name: 'refused',
+              payload: {
+                gameId
+              }
+            }
+          }
       }
     },
     finishGame: ({ status, assignedGameId }, { gameId }) => {

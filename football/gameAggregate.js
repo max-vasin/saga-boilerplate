@@ -24,6 +24,17 @@ module.exports = {
       }
       return new Error(`player ${playerId} was not invited to the party`)
     },
+    refusePlayer: ({ expectedPlayers, acceptedPlayers }, { playerId }) => {
+      if (_.includes(expectedPlayers, playerId)) {
+        return {
+          name: 'cancelled',
+          payload: {
+            acceptedPlayers
+          }
+        }
+      }
+      return new Error(`player ${playerId} was not invited to the party`)
+    },
 
     // This command called by gameLogicLeakSaga each time playerAccepted event generated
     // Its logic should be injected directly into acceptPlayer,
